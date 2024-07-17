@@ -8,10 +8,11 @@ SoftUni React Course Project
 - [x] cleanup Client
 - [x] Add project resouces
 - [x] Convert html to jsx
-- [ ] Separate HTML into components
+- [x] Separate HTML into components
 
 ## 2. React Router
-- [ ] Install react-router-dom
-- [ ] Setup react-router-dom
-- [ ] Add routes in App.jsx
+- [x] Install react-router-dom
+- [x] Setup react-router-dom
+- [x] Add routes in App.jsx
+- [ ] Add links in navigation
 - [ ] 

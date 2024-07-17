@@ -1,4 +1,4 @@
-export default function Craete() {
+export default function GameCreate() {
     return (
         <section id="create-page" className="auth">
         <form id="create">
