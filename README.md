@@ -36,4 +36,4 @@ SoftUni React Course Project
 - [x] Post comment to server
 - [x] Reade comments from server
 - [x] Add comments in the component
-- [ ] Clear form
+- [x] Clear form

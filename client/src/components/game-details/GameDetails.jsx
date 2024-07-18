@@ -32,8 +32,8 @@ export default function GameDetails() {
             }
         }));
 
-        setUsername('');
-        setComment('');
+        setUsername('');        // clear comment form username field
+        setComment('');         // clear comment form comment field
     }
 
     return (
