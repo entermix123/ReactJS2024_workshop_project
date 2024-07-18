@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import gamesAPI from "../../api/games-api";
 import { useParams } from "react-router-dom";
+import commentsApi from "../../api/comments-api";
 
 export default function GameDetails() {
 
-    const [ game, setGame ] = useState([]);           // set state for current game
+    const [ game, setGame ] = useState({});           // set state for current game
+    const [ username, setUsername ] = useState('');     // set state for username
+    const [ comment, setComment ] = useState('');       // set state for comment
     const { gameId } = useParams();                   // useParams take specific property of the game
 
     useEffect(() => {                               // set useEffect to change current game content
@@ -13,6 +16,25 @@ export default function GameDetails() {
             setGame(result);                        // set game state as result game details
         })();
     }, []);
+
+    const commentSubmitHanlder = async (e) => {
+        e.preventDefault();
+
+        const newComment = await commentsApi.create(gameId, username, comment);  // create comment with props
+
+        // TODO: this should be refactured
+        // update comments for specific game - reload comments
+        setGame(prevState => ({     // make new reference for availble games 
+            ...prevState,
+            comments: {                 // make new reference for comments in every game
+                ...prevState.comments,
+                [newComment._id]: newComment,
+            }
+        }));
+
+        setUsername('');
+        setComment('');
+    }
 
     return (
         <section id="game-details">
@@ -32,16 +54,16 @@ export default function GameDetails() {
             <div className="details-comments">
                 <h2>Comments:</h2>
                 <ul>
-                    {/* <!-- list all comments for current game (If any) --> */}
-                    <li className="comment">
-                        <p>Content: I rate this one quite highly.</p>
-                    </li>
-                    <li className="comment">
-                        <p>Content: The best game.</p>
-                    </li>
+                    {/* if length of the keys of comments are > 0, map comments, else show no comments */}
+                    {Object.keys(game.comments || {}).length > 0             
+                        ? Object.values(game.comments).map(comment => (     
+                            <li key={comment._id} className="comment">
+                                <p>{comment.username}: {comment.text}</p>
+                            </li>
+                        ))
+                        : <p className="no-comment">No comments.</p>
+                    }
                 </ul>
-                {/* <!-- Display paragraph: If there are no games in the database --> */}
-                <p className="no-comment">No comments.</p>
             </div>
 
             {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
@@ -55,9 +77,28 @@ export default function GameDetails() {
         {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) --> */}
         <article className="create-comment">
             <label>Add new comment:</label>
-            <form className="form">
-                <textarea name="comment" placeholder="Comment......"></textarea>
-                <input className="btn submit" type="submit" value="Add Comment" />
+            <form className="form" onSubmit={commentSubmitHanlder}>
+                {/* add additional input for comment without user auth and user functionality */}
+                <input 
+                    type="text" 
+                    placeholder="Pesho" 
+                    name="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+
+                <textarea 
+                    name="comment" 
+                    placeholder="Comment......"
+                    value={comment}
+                    onChange={(e) => setComment(e.target.value)}
+                ></textarea>
+
+                <input 
+                    className="btn submit" 
+                    type="submit" 
+                    value="Add Comment" 
+                />
             </form>
         </article>
 

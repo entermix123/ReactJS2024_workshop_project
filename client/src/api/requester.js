@@ -24,6 +24,13 @@ export const post = requester.bind(null, 'POST');
 export const put = requester.bind(null, 'PUT');     
 export const del = requester.bind(null, 'DELETE');     
 
+export default {
+    get,
+    post,
+    put,
+    del,
+};
+
 // // Explanation
 // // get is function that require url and data that uses requester that requires method, url and data
 // export const get = (url, data) => requester('GET', url, data)

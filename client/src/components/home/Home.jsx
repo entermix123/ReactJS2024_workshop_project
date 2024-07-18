@@ -12,7 +12,8 @@ export default function Home() {
 
             setLatestGames(result.reverse().slice(0, 3));
         })();
-    }, [])
+    }, []);
+
     return (
         <section id="welcome-world">
 

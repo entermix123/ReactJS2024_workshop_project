@@ -28,8 +28,12 @@ SoftUni React Course Project
   - [x] Create Details Lnk
   - [x] Create Details Route
   - [x] API function - get one game
-  - [ ] Comments
 - [x] Home - latest games
 - [ ] 
 
-## 5. 
+## 5. Comments
+- [x] Create serive for nested resource 'comments'
+- [x] Post comment to server
+- [x] Reade comments from server
+- [x] Add comments in the component
+- [ ] Clear form
