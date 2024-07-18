@@ -1,3 +1,5 @@
+import { Routes, Route } from "react-router-dom"
+
 import GameList from "./components/game-list/GameList"
 import Register from "./components/register/Register"
 import GameCraete from "./components/game-create/GameCreate"
@@ -5,8 +7,7 @@ import GameEdit from "./components/game-edit/GameEdit"
 import Header from "./components/header/Header"
 import Home from "./components/home/Home"
 import Login from "./components/login/Login"
-
-import { Routes, Route } from "react-router-dom"
+import GameDetails from "./components/game-details/GameDetails"
 
 function App() {
     return (
@@ -26,6 +27,8 @@ function App() {
                     <Route path='/game/edit' element={<GameEdit />} />
 
                     <Route path='/games' element={<GameList />} />
+
+                    <Route path='/games/:gameId/details' element={<GameDetails />} />
                                                 
                     <Route path='/games/create' element={<GameCraete />} />
                     

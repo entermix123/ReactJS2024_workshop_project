@@ -1,22 +1,32 @@
+import { useEffect, useState } from "react";
+import gamesAPI from "../../api/games-api";
+import { useParams } from "react-router-dom";
+
 export default function GameDetails() {
+
+    const [ game, setGame ] = useState([]);           // set state for current game
+    const { gameId } = useParams();                   // useParams take specific property of the game
+
+    useEffect(() => {                               // set useEffect to change current game content
+        (async () => {                              // set async function to make GET request for specific game
+            const result = await gamesAPI.getOne(gameId); // call getOne function from games-api.js
+            setGame(result);                        // set game state as result game details
+        })();
+    });
+
     return (
         <section id="game-details">
         <h1>Game Details</h1>
         <div className="info-section">
 
             <div className="game-header">
-                <img className="game-img" src="images/MineCraft.png" />
-                <h1>Bright</h1>
-                <span className="levels">MaxLevel: 4</span>
-                <p className="type">Action, Crime, Fantasy</p>
+                <img className="game-img" src={game.imageUrl} />
+                <h1>{game.title}</h1>
+                <span className="levels">MaxLevel: {game.maxLevel}</span>
+                <p className="type">{game.category}</p>
             </div>
 
-            <p className="text">
-                Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work
-                with an Orc to find a weapon everyone is prepared to kill for. Set in a world where fantasy
-                creatures live side by side with humans. A human cop is forced
-                to work with an Orc to find a weapon everyone is prepared to kill for.
-            </p>
+            <p className="text">{game.summary}</p>
 
             {/* <!-- Bonus ( for Guests and Users ) --> */}
             <div className="details-comments">

@@ -5,7 +5,9 @@ import * as gamesAPI from '../../api/games-api'
 import GameListItem from './game-list-item/GameListItem';
 
 export default function GameList() {
+    
     const [games, setGames] = useState([]);
+
     useEffect(() => {
         // // example 1 for syntax for useEffect with IIFE (Immediately Invoked Function Expression)
         // (async () => {
