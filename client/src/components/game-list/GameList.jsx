@@ -13,13 +13,14 @@ export default function GameList() {
         //     setGames(result);
         // })();
 
-        // // example 2 for syntax for useEffect
+        // // example 2 for syntax for useEffect with internal asynchronous function that must be called
         // const neshto = async () => {
         //     const result = await gamesAPI.getAll()
         //     setGames(result)
         // }
         // neshto();
 
+        // example 3 - use short promise syntax
         gamesAPI.getAll().then(result => setGames(result));
     }, []);
 
