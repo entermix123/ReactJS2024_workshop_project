@@ -24,8 +24,12 @@ SoftUni React Course Project
 
 ## 4. Page Implementations
 - [x] Game List
-- [ ] Game Details 
+- [x] Game Details 
   - [x] Create Details Lnk
   - [x] Create Details Route
   - [x] API function - get one game
-- [ ] Home
+  - [ ] Comments
+- [x] Home - latest games
+- [ ] 
+
+## 5. 
