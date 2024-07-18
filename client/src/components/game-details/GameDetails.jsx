@@ -12,7 +12,7 @@ export default function GameDetails() {
             const result = await gamesAPI.getOne(gameId); // call getOne function from games-api.js
             setGame(result);                        // set game state as result game details
         })();
-    });
+    }, []);
 
     return (
         <section id="game-details">
