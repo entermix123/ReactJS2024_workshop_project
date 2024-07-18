@@ -7,8 +7,20 @@ import GameListItem from './game-list-item/GameListItem';
 export default function GameList() {
     const [games, setGames] = useState([]);
     useEffect(() => {
-        gamesAPI.getAll()
-            .then(result => setGames(result));
+        // // example 1 for syntax for useEffect with IIFE (Immediately Invoked Function Expression)
+        // (async () => {
+        //     const result = await gamesAPI.getAll();
+        //     setGames(result);
+        // })();
+
+        // // example 2 for syntax for useEffect
+        // const neshto = async () => {
+        //     const result = await gamesAPI.getAll()
+        //     setGames(result)
+        // }
+        // neshto();
+
+        gamesAPI.getAll().then(result => setGames(result));
     }, []);
 
     return (
