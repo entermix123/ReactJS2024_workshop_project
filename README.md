@@ -23,6 +23,6 @@ SoftUni React Course Project
 - [x] Preseed Practice server
 
 ## 4. Page Implementations
-- [ ] Game List
+- [x] Game List
 - [ ] Game Details
 - [ ] Home

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+
 import * as gamesAPI from '../../api/games-api'
+
 import GameListItem from './game-list-item/GameListItem';
 
 export default function GameList() {
@@ -17,7 +19,7 @@ export default function GameList() {
         {/* add terrar condition when no games are available */}
         {games.length > 0
             ? games.map(game => <GameListItem key={game._id} {...game} /> )
-            : <h3 className="no-articles">No articles yet</h3>
+            : <h3 className="no-articles">No games yet</h3>
         }                 
     </section>
     );
