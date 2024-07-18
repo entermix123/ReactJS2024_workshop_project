@@ -28,7 +28,7 @@ export default function GameDetails() {
             ...prevState,
             comments: {                 // make new reference for comments in every game
                 ...prevState.comments,
-                [newComment._id]: newComment,
+                [newComment._id]: newComment,   // add latest comment
             }
         }));
 
