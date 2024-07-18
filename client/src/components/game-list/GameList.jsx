@@ -14,10 +14,11 @@ export default function GameList() {
         <h1>All Games</h1>
     
         {/* iterate and visualize all games with theyr keys and game props - spread game props: {...game} */}
-        {games.map(game => <GameListItem key={game._id} {...game} /> )}
-           
-        {/* <!-- Display paragraph: If there is no games  --> */}
-        <h3 className="no-articles">No articles yet</h3>
+        {/* add terrar condition when no games are available */}
+        {games.length > 0
+            ? games.map(game => <GameListItem key={game._id} {...game} /> )
+            : <h3 className="no-articles">No articles yet</h3>
+        }                 
     </section>
     );
 }
