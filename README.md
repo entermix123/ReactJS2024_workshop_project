@@ -29,7 +29,6 @@ SoftUni React Course Project
   - [x] Create Details Route
   - [x] API function - get one game
 - [x] Home - latest games
-- [ ] 
 
 ## 5. Comments
 - [x] Create serive for nested resource 'comments'
@@ -37,3 +36,23 @@ SoftUni React Course Project
 - [x] Reade comments from server
 - [x] Add comments in the component
 - [x] Clear form
+
+## 6. API Hooks
+- [ ] GameAPI Hooks
+- [ ] Comments Hooks
+- [ ] Form Hook
+
+## 7. Authentication
+- [ ] Auth API
+- [ ] Auth API hook
+- [ ] Auth state & context
+- [ ] Login
+- [ ] Register
+- [ ] Logout
+
+## UI Implementation
+- [ ] Dynamic Navigation
+- [ ] Create Game
+  - [ ] API function
+  - [ ] Hook
+  - [ ] 
