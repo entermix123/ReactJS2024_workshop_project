@@ -6,15 +6,15 @@ export default function Login() {
     // import the useLogin hook from the auth hook file
     const login = useLogin();
 
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // import the useNavigate hook from react-router-dom to navigate to the home page
 
-    // set default values of email and password and use them with useLogin as a function
+    // use the useForm hook to manage form state and handle form submission
     const { values, changeHandler, submitHandler } = useForm(
         { email: "", password: "" },
         async ({ email, password }) => {
             try {
-                await login(email, password);
-                navigate("/");
+                await login(email, password);   // try to login with provided email and password
+                navigate("/");                  // navigate after successful login
             } catch (err) {
                 console.log(err.message);
             }
@@ -31,21 +31,21 @@ export default function Login() {
                     <input
                         type="email"
                         id="email"
-                        name="email" // required
-                        value={values.email} // required
-                        onChange={changeHandler} // required
+                        name="email"                    // required
+                        value={values.email}            // required
+                        onChange={changeHandler}        // required
                         placeholder="Sokka@gmail.com"
-                        autoComplete="email"
+                        autoComplete="email"            // added for better security
                     />
 
                     <label htmlFor="login-password">Password:</label>
                     <input
                         type="password"
                         id="login-password"
-                        name="password" // required
-                        value={values.password} // required
-                        onChange={changeHandler} // required
-                        autoComplete="current-password"
+                        name="password"                 // required
+                        value={values.password}         // required
+                        onChange={changeHandler}        // required
+                        autoComplete="current-password" // added for better security
                     />
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
