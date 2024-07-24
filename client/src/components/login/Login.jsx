@@ -2,24 +2,27 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useLogin } from "../../hooks/useAuth";
 
+// define initial values for form fields
+const initialValues = { email: "", password: "" }
+
 export default function Login() {
     // import the useLogin hook from the auth hook file
     const login = useLogin();
 
-    const navigate = useNavigate(); // import the useNavigate hook from react-router-dom to navigate to the home page
+    // import the useNavigate hook from react-router-dom to navigate to the home page
+    const navigate = useNavigate(); 
 
-    // use the useForm hook to manage form state and handle form submission
-    const { values, changeHandler, submitHandler } = useForm(
-        { email: "", password: "" },
-        async ({ email, password }) => {
-            try {
-                await login(email, password);   // try to login with provided email and password
-                navigate("/");                  // navigate after successful login
-            } catch (err) {
-                console.log(err.message);
-            }
+    // create a login handler function
+    const loginHandler = async ({ email, password }) => {
+        try {
+            await login(email, password);   // try to login with provided email and password
+            navigate("/");                  // navigate after successful login
+        } catch (err) {
+            console.log(err.message);
         }
-    );
+    }
+    // use the useForm hook to manage form state and handle form submission
+    const { values, changeHandler, submitHandler } = useForm(initialValues, loginHandler);
 
     return (
         <section id="login-page" className="auth">
