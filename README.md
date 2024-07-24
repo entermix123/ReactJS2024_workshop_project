@@ -39,16 +39,17 @@ SoftUni React Course Project
 
 ## 6. API Hooks
 - [x] GameAPI Hooks
+- [x] Form Hook
 - [ ] Comments Hooks
-- [ ] Form Hook
 
 ## 7. Authentication
 - [ ] Auth API
+  - [ ] Login
+  - [ ] Register
+- [ ] Logout
 - [ ] Auth API hook
 - [ ] Auth state & context
-- [ ] Login
-- [ ] Register
-- [ ] Logout
+
 
 ## UI Implementation
 - [ ] Dynamic Navigation
@@ -56,3 +57,4 @@ SoftUni React Course Project
   - [ ] API function
   - [ ] Hook
   - [ ] Latest Games
+  

@@ -1,6 +1,6 @@
 import requester from "./requester"
 
-const BASE_URL = 'http://localhost:3030/jsonstore/games'
+const BASE_URL = 'http://localhost:3030/jsonstore/games';
 
 const buldUrl = (gameId) => `${BASE_URL}/${gameId}/comments`;
 
