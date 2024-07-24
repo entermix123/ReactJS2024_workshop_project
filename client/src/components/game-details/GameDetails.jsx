@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
-import gamesAPI from "../../api/games-api";
+import { useState } from "react";
+
 import { useParams } from "react-router-dom";
 import commentsApi from "../../api/comments-api";
+import { useGetOneGames } from "../../hooks/useGames";
 
 export default function GameDetails() {
 
-    const [ game, setGame ] = useState({});           // set state for current game
+    const { gameId } = useParams();                   // useParams take specific property of the game
     const [ username, setUsername ] = useState('');     // set state for username
     const [ comment, setComment ] = useState('');       // set state for comment
-    const { gameId } = useParams();                   // useParams take specific property of the game
+    const [ game, setGame ] = useGetOneGames(gameId);   // use useOneGames with gameId
 
-    useEffect(() => {                               // set useEffect to change current game content
-        (async () => {                              // set async function to make GET request for specific game
-            const result = await gamesAPI.getOne(gameId); // call getOne function from games-api.js
-            setGame(result);                        // set game state as result game details
-        })();
-    }, []);
 
     const commentSubmitHanlder = async (e) => {
         e.preventDefault();
