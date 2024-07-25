@@ -18,7 +18,7 @@ export default function Login() {
             await login(email, password);   // try to login with provided email and password
             navigate("/");                  // navigate after successful login
         } catch (err) {
-            console.log(err.message);
+            console.error(err.message);
         }
     }
     // use the useForm hook to manage form state and handle form submission
@@ -53,7 +53,7 @@ export default function Login() {
                     <input type="submit" className="btn submit" value="Login" />
                     <p className="field">
                         <span>
-                            If you don't have profile click <a href="#">here</a>
+                            If you dont have profile click <a href="#">here</a>
                         </span>
                     </p>
                 </div>

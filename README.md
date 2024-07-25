@@ -61,9 +61,11 @@ SoftUni React Course Project
 
 
 ## 8. UI Implementation
-- [ ] Dynamic Navigation
+- [x] Dynamic Navigation
 - [ ] Create Game
   - [ ] API function
   - [ ] Hook
   - [ ] Latest Games
   
+## Notes
+Latest Games URL 'http://localhost:3030/data/games?sortBy=_createdOn%20desc&pageSize=3'

@@ -18,6 +18,9 @@ function App() {
 
     // create a function to change the authentication state
     const changeAuthState = (state) => {
+        // TODO quick solution for token persist in local storage, fix by impelementing persisted outstate
+        localStorage.setItem('accessToken', state.accessToken);
+
         // TODO validate state
         setAuthState(state);
     };

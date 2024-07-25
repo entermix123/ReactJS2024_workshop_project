@@ -10,12 +10,11 @@ export const useLogin = () => {
     const {changeAuthState} = useContext(AuthContext);
 
     const loginHandler = async (email, password) => {
-        const result = await login(email, password);
-        const { password: _, ...authData } = result;        // remove password from response data
+        const { password: _, ...authData } = await login(email, password);  // remove password from response data  
 
-        changeAuthState(authData);                          // update the auth state in the context using result
+        changeAuthState(authData);                        // update the auth state in the context using result
 
-        return result;
+        return authData;
     }
 
     return loginHandler;
@@ -25,12 +24,11 @@ export const useRegister = () => {
     const { changeAuthState } = useContext(AuthContext);
 
     const registerHandler = async (email, password) => {
-        const result = await register(email, password);
-        const { password: _, ...authData } = result;        // remove password from response data
+        const { password: _, ...authData } = await register(email, password);   // remove password from response data       
 
         changeAuthState(authData);                          // update the auth state in the context using result
 
-        return result;
+        return authData;
     };
 
     return registerHandler;
