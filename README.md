@@ -45,11 +45,11 @@ SoftUni React Course Project
 ## 7. Authentication
 - [x] Auth API
   - [x] Login
-  - [ ] Register
+  - [x] Register
   - [ ] Logout
 - [x] Auth API hook
   - [x] Login
-  - [ ] Register
+  - [x] Register
   - [ ] Logout
   - [ ] Authorized Requests
 - [x] Auth state & context
