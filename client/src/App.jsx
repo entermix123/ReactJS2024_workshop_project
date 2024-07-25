@@ -24,6 +24,7 @@ function App() {
 
     // create a context object with the authentication state and the changeAuthState function
     const contextData = {
+        userId: authstate._id,
         email: authstate.email,
         accessToken: authstate.accessToken,
         isAuthenticated: !!authstate.email,     // '!!' is used to convert falsy values to false and truthy values to true
