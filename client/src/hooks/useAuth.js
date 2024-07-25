@@ -11,8 +11,9 @@ export const useLogin = () => {
 
     const loginHandler = async (email, password) => {
         const result = await login(email, password);
+        const { password: _, ...authData } = result;        // remove password from response data
 
-        changeAuthState(result);                        // update the auth state in the context using result
+        changeAuthState(authData);                          // update the auth state in the context using result
 
         return result;
     }
@@ -25,9 +26,9 @@ export const useRegister = () => {
 
     const registerHandler = async (email, password) => {
         const result = await register(email, password);
-        const { password: _, ...authData } = result;
+        const { password: _, ...authData } = result;        // remove password from response data
 
-        changeAuthState(authData);                        // update the auth state in the context using result
+        changeAuthState(authData);                          // update the auth state in the context using result
 
         return result;
     };
