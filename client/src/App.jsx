@@ -1,4 +1,6 @@
+import { useState } from "react"
 import { Routes, Route } from "react-router-dom"
+import { AuthContext } from "./contexts/AuthContext"
 
 import GameList from "./components/game-list/GameList"
 import Register from "./components/register/Register"
@@ -10,7 +12,27 @@ import Login from "./components/login/Login"
 import GameDetails from "./components/game-details/GameDetails"
 
 function App() {
+
+    // create a state to store the user's authentication state
+    const [authstate, setAuthState] = useState({});
+
+    // create a function to change the authentication state
+    const changeAuthState = (state) => {
+        // TODO validate state
+        setAuthState(state);
+    };
+
+    // create a context object with the authentication state and the changeAuthState function
+    const contextData = {
+        email: authstate.email,
+        accessToken: authstate.accessToken,
+        isAuthenticated: !!authstate.email,     // '!!' is used to convert falsy values to false and truthy values to true
+        changeAuthState,
+    }
+
     return (
+        <AuthContext.Provider value={contextData}>   {/* Wrap the app with AuthContext.Provider - pass the contextData */}
+
         <div id="box">
 
             <Header />
@@ -36,6 +58,8 @@ function App() {
 
             </main>
         </div>
+
+        </AuthContext.Provider>
     )
 }
 
