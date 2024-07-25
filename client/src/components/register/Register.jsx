@@ -14,14 +14,14 @@ export default function Register() {
 
         // make simple validation for password match
         if (values.password !== values['confirm-password']) {  
-            return setError('Passwords missmatch');     // if passwords do not match show error
+            return setError('Passwords missmatch');         // if passwords do not match show error
         }
         try {
-            await register(values.email, values.password); // try to register with provided email and password
+            await register(values.email, values.password);  // try to register with provided email and password
 
-            navigate("/"); // navigate after successful register
+            navigate("/");                                  // navigate after successful register
         } catch (err) {
-            setError(err.message); // if error occurred show error messageError(err.message);          // if error occurred show error message
+            setError(err.message);                          // if error occurred show error message
             console.error(err.message);
         }
     };
@@ -40,31 +40,31 @@ export default function Register() {
                     <input
                         type="email"
                         id="email"
-                        name="email" // required
-                        value={values.email} // required
-                        onChange={changeHandler} // required
+                        name="email"                        // required
+                        value={values.email}                // required
+                        onChange={changeHandler}            // required
                         placeholder="maria@email.com"
-                        autoComplete="email" // added for better security
+                        autoComplete="email"                // added for better security
                     />
 
                     <label htmlFor="pass">Password:</label>
                     <input
                         type="password"
-                        name="password"
-                        value={values.password} // required
-                        onChange={changeHandler} // required
+                        name="password"                     // required
+                        value={values.password}             // required
+                        onChange={changeHandler}            // required
                         id="register-password"
-                        autoComplete="new-password" // added for better security
+                        autoComplete="new-password"         // added for better security
                     />
 
                     <label htmlFor="con-pass">Confirm Password:</label>
                     <input
                         type="password"
-                        name="confirm-password"
-                        value={values['confirm-password']} // required
-                        onChange={changeHandler} // required
+                        name="confirm-password"             // required
+                        value={values['confirm-password']}  // required
+                        onChange={changeHandler}            // required
                         id="confirm-password"
-                        autoComplete="new-password"
+                        autoComplete="new-password"         // added for better security
                     />
 
                     {/* show error if passwords do not match or other error*/}

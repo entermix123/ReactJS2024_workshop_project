@@ -14,7 +14,7 @@ import GameDetails from "./components/game-details/GameDetails"
 function App() {
 
     // create a state to store the user's authentication state
-    const [authstate, setAuthState] = useState({});
+    const [authState, setAuthState] = useState({});
 
     // create a function to change the authentication state
     const changeAuthState = (state) => {
@@ -24,10 +24,10 @@ function App() {
 
     // create a context object with the authentication state and the changeAuthState function
     const contextData = {
-        userId: authstate._id,
-        email: authstate.email,
-        accessToken: authstate.accessToken,
-        isAuthenticated: !!authstate.email,     // '!!' is used to convert falsy values to false and truthy values to true
+        userId: authState._id,
+        email: authState.email,
+        accessToken: authState.accessToken,
+        isAuthenticated: !!authState.email,     // '!!' is used to convert falsy values to false and truthy values to true
         changeAuthState,
     }
 

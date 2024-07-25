@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { login, register } from "../api/auth-api";
 import { AuthContext } from "../contexts/AuthContext";
@@ -24,8 +25,9 @@ export const useRegister = () => {
 
     const registerHandler = async (email, password) => {
         const result = await register(email, password);
+        const { password: _, ...authData } = result;
 
-        changeAuthState(result);                        // update the auth state in the context using result
+        changeAuthState(authData);                        // update the auth state in the context using result
 
         return result;
     };
