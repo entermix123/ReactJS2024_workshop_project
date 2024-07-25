@@ -69,3 +69,4 @@ SoftUni React Course Project
   
 ## Notes
 Latest Games URL 'http://localhost:3030/data/games?sortBy=_createdOn%20desc&pageSize=3'
+Preseed data on server.js on 1341 row - add games, users and whatever needed

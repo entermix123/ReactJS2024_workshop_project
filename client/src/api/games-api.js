@@ -9,6 +9,13 @@ export const getAll = async () => {
     return games;
 }
 
+export const getLatest = async () => {
+    const result = await requester.get(`${BASE_URL}?sortBy=_createdOn%20desc&pageSize=3`)
+
+    const games = Object.values(result);   
+    return games;
+}
+
 // add route for 'GET' specific game data
 export const getOne = (gameId) => requester.get(`${BASE_URL}/${gameId}`);
 
@@ -18,6 +25,7 @@ export const create = (gameData) => requester.post(`${BASE_URL}`, gameData);
 const gamesAPI = {
     getOne,
     getAll,
+    getLatest,
     create,
 }
 
