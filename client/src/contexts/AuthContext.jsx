@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
+import usePersistedState from "../hooks/usePersistedSate";
 
 //  initial state and types of props are made for help when AuthContext is imported
 export const AuthContext = createContext({
@@ -12,7 +13,7 @@ export const AuthContext = createContext({
 
 export function AuthContextProvider(props) {
     // create a state to store the user's authentication state
-    const [authState, setAuthState] = useState({});
+    const [authState, setAuthState] = usePersistedState('auth', {});    // key='auth' and initialValues={}
 
     // create a function to change the authentication state
     const changeAuthState = (state) => {

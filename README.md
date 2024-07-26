@@ -72,6 +72,7 @@ Latest Games URL 'http://localhost:3030/data/games?sortBy=_createdOn%20desc&page
 Preseed data on server.js on 1341 row - add games, users and whatever needed
   
 ## 9. Refactoring
-- [ ] Extract auth state from App component
+- [x] Extract auth state from App component
+- [ ] Persist auth state
   
 
