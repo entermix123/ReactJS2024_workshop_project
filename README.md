@@ -46,26 +46,26 @@ SoftUni React Course Project
 - [x] Auth API
   - [x] Login
   - [x] Register
-  - [ ] Logout
+  - [x] Logout
 - [x] Auth API hook
   - [x] Login
   - [x] Register
-  - [ ] Logout
+  - [x] Logout
   - [ ] Authorized Requests
 - [x] Auth state & context
 - [x] Token management
 - [x] Login
 - [x] Register
   - [x] Add form validation
-- [ ] Logout
+- [x] Logout
 
 
 ## 8. UI Implementation
 - [x] Dynamic Navigation
 - [ ] Create Game
-  - [ ] API function
-  - [ ] Hook
-  - [ ] Latest Games
+  - [x] API function
+  - [x] Hook
+  - [x] Latest Games
 
 ## Notes
 Latest Games URL 'http://localhost:3030/data/games?sortBy=_createdOn%20desc&pageSize=3'
@@ -73,6 +73,6 @@ Preseed data on server.js on 1341 row - add games, users and whatever needed
   
 ## 9. Refactoring
 - [x] Extract auth state from App component
-- [ ] Persist auth state
+- [x] Persist auth state
   
 

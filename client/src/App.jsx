@@ -9,6 +9,7 @@ import Header from "./components/header/Header"
 import Home from "./components/home/Home"
 import Login from "./components/login/Login"
 import GameDetails from "./components/game-details/GameDetails"
+import Logout from "./components/logout/Logout"
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
                                                 
                     <Route path='/games/create' element={<GameCraete />} />
                     
+                    <Route path='/logout' element={<Logout />} />
                 </Routes>
 
             </main>

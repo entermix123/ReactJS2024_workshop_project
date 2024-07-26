@@ -1,5 +1,17 @@
+import { getAccessToken } from "../utils/authUtils";
+
 async function requester(method, url, data) {
     const options = {};
+
+    const accessToken = getAccessToken();  // get access token from local storage
+
+    if (accessToken && accessToken.trim() !== "") {
+        // check if access token exists and is not empty
+        options.headers = {
+            ...options.headers,
+            "X-Authorization": accessToken,
+        };
+    }
 
     if (method !== "GET") {
         options.method = method;
@@ -14,17 +26,12 @@ async function requester(method, url, data) {
         options.body = JSON.stringify(data);
     }
 
-    const accessToken = localStorage.getItem("accessToken"); // get access token from local storage
+    const response = await fetch(url, options);
 
-    if (accessToken && accessToken.trim() !== "") {
-        // check if access token exists and is not empty
-        options.headers = {
-            ...options.headers,
-            "X-Authorization": accessToken,
-        };
+    if (response.status === 204) {      // in case of logout, return nothing, because can't parse null to JSON
+        return;
     }
 
-    const response = await fetch(url, options);
     const result = await response.json();
 
     if (!response.ok) {
