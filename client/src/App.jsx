@@ -1,6 +1,5 @@
-import { useState } from "react"
 import { Routes, Route } from "react-router-dom"
-import { AuthContext } from "./contexts/AuthContext"
+import { AuthContextProvider } from "./contexts/AuthContext"
 
 import GameList from "./components/game-list/GameList"
 import Register from "./components/register/Register"
@@ -13,29 +12,8 @@ import GameDetails from "./components/game-details/GameDetails"
 
 function App() {
 
-    // create a state to store the user's authentication state
-    const [authState, setAuthState] = useState({});
-
-    // create a function to change the authentication state
-    const changeAuthState = (state) => {
-        // TODO quick solution for token persist in local storage, fix by impelementing persisted outstate
-        localStorage.setItem('accessToken', state.accessToken);
-
-        // TODO validate state
-        setAuthState(state);
-    };
-
-    // create a context object with the authentication state and the changeAuthState function
-    const contextData = {
-        userId: authState._id,
-        email: authState.email,
-        accessToken: authState.accessToken,
-        isAuthenticated: !!authState.email,     // '!!' is used to convert falsy values to false and truthy values to true
-        changeAuthState,
-    }
-
     return (
-        <AuthContext.Provider value={contextData}>   {/* Wrap the app with AuthContext.Provider - pass the contextData */}
+        <AuthContextProvider >      {/* Context Provider */} 
 
         <div id="box">
 
@@ -63,7 +41,7 @@ function App() {
             </main>
         </div>
 
-        </AuthContext.Provider>
+        </AuthContextProvider>
     )
 }
 
