@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 //  initial state and types of props are made for help when AuthContext is imported
 export const AuthContext = createContext({
@@ -37,4 +37,13 @@ export function AuthContextProvider(props) {
             {props.children}
         </AuthContext.Provider>
     );
+}
+
+
+// small optimization for performance
+// eslint-disable-next-line react-refresh/only-export-components
+export function useAuthContext() {
+    const authData = useContext(AuthContext);
+
+    return authData;
 }
