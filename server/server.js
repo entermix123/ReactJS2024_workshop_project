@@ -1339,6 +1339,30 @@
     	}
     };
     var seedData = {
+        games: {
+            "a9bc67fe-6d48-42c6-8970-811a6d1065cb": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "Doom 1",
+                "category": "Shooter",
+                "maxLevel": "96",
+                "imageUrl": "https://www.thumbculture.co.uk/wp-content/uploads/2021/12/Doom-1-1024x597.png",
+                "summary": "THA GAME MATE !!!",
+                "_createdOn": 1722089526098,
+                "_id": "a9bc67fe-6d48-42c6-8970-811a6d1065cb"                
+            },
+            
+            "b8484ecc-040f-49ae-a746-b68aa95cee5f": {
+                "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                "title": "Heroes 3 Might and Magic",
+                "category": "Strategy",
+                "maxLevel": "50",
+                "imageUrl": "https://www.tlapkashop.cz/18532-large_default/heroes-of-might-magic-iii-board-game.jpg",
+                "summary": "Man, what a game",
+                "_createdOn": 1722089655921,
+                "_id": "b8484ecc-040f-49ae-a746-b68aa95cee5f"
+            }
+            
+        },
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",

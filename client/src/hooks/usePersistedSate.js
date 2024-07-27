@@ -4,13 +4,13 @@ export default function usePersistedState(key, initialState) {
     const [state, setState] = useState(() => {
         const persistedAuth = localStorage.getItem(key); // create  var for local storage data
 
-        if (!persistedAuth) {
+        if (!persistedAuth || persistedAuth === '') {
             // check if data exists in local storage
             return typeof initialState === "function" // check if initial state is a function
                 ? initialState() // call the initial state function
                 : initialState; // else return initial state as received
         }
-
+        
         const authData = JSON.parse(persistedAuth); // parse data from local storage
 
         return authData; // return parsed data from local storage

@@ -6,7 +6,7 @@ import usePersistedState from "../hooks/usePersistedSate";
 export const AuthContext = createContext({
     userId: '',
     email: '',
-    accessToken: "",
+    accessToken: '',
     isAuthenticated: false,     // '!!' is used to convert falsy values to false and truthy values to true
     changeAuthState: (authState = {}) => null,  // placeholder function for updating auth state
     logout: () => null,
@@ -49,6 +49,6 @@ export function AuthContextProvider(props) {
 // eslint-disable-next-line react-refresh/only-export-components
 export function useAuthContext() {
     const authData = useContext(AuthContext);
-
+    // console.log(authData)
     return authData;
 }

@@ -34,12 +34,14 @@ export const useRegister = () => {
 };
 
 export const useLogout = () => {
+    // rename the function in local scope to avoid naming conflict with the context logout function
     const { logout: localLogout } = useAuthContext();
 
     const logoutHandler = async () => {
-        await logout();   // remove password from response data       
-
         localLogout();                          // update the auth state in the context using result
+        
+        await logout();                         // remove password from response data       
+
     };
 
     return logoutHandler;
