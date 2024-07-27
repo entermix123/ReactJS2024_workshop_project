@@ -24,7 +24,7 @@ export default function usePersistedState(key, initialState) {
                 : value; // if not a function, use the value directly
 
         if (newState === null || newState === undefined) {          // if steate is null or undefined
-            return localStorage.removeItem(key);                    // remove from local storage
+            localStorage.removeItem(key);                    // remove from local storage
         } else {
             localStorage.setItem(key, JSON.stringify(newState));    // update local storage
         }

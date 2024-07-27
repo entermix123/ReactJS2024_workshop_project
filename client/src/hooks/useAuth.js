@@ -38,10 +38,9 @@ export const useLogout = () => {
     const { logout: localLogout } = useAuthContext();
 
     const logoutHandler = async () => {
-        localLogout();                          // update the auth state in the context using result
-        
         await logout();                         // remove password from response data       
-
+        localLogout();                          // update the auth state in the context using result
+    
     };
 
     return logoutHandler;

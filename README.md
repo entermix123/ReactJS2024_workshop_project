@@ -59,7 +59,6 @@ SoftUni React Course Project
   - [x] Add form validation
 - [x] Logout
 
-
 ## 8. UI Implementation
 - [x] Dynamic Navigation
 - [ ] Create Game
@@ -77,5 +76,6 @@ Preseed data on server.js on 1341 row - add games, users and whatever needed
 - [x] Refatured comments 
 - [x] Refactured comments with useReducer
 - [x] Show edit and delete button if game owner
-
-
+- [ ] Edit page and edit functionality
+- [ ] Delete game functionality
+- [ ] Profiler usage in inspect browser console
