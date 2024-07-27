@@ -74,5 +74,8 @@ Preseed data on server.js on 1341 row - add games, users and whatever needed
 ## 9. Refactoring
 - [x] Extract auth state from App component
 - [x] Persist auth state
-  
+- [x] Refatured comments 
+- [x] Refactured comments with useReducer
+- [x] Show edit and delete button if game owner
+
 
