@@ -10,8 +10,9 @@ const initialValues = {
 
 export default function GameDetails() {
     const { gameId } = useParams();                    // useParams take specific property of the game
-    const createComment = useCreateComment();
     const [comments, dispatch] = useGetAllComments(gameId);
+    const createComment = useCreateComment();
+    const { email } = useAuthContext();
     const [ game ] = useGetOneGames(gameId);   // take specific game and set the state
     const { isAuthenticated } = useAuthContext();
 
@@ -25,7 +26,7 @@ export default function GameDetails() {
             const newComment = await createComment(gameId, comment);
 
             // setComments(oldComments => [...oldComments, newComment]);
-            dispatch({type: 'ADD_COMMENT', payload: newComment});
+            dispatch({type: 'ADD_COMMENT', payload: {...newComment, author: {email} }});
 
         } catch (err) {
             console.error(err.message);
