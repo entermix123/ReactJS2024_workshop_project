@@ -21,7 +21,7 @@ export default function GameEdit() {
             navigate(`/games/${gameId}/details`);
         }
         
-    }, { reinitializeForm: true });  // reinitialize form with current game data
+    });
 
     return (
         <section id="edit-page" className="auth">
