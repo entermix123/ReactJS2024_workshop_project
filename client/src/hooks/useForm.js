@@ -15,10 +15,10 @@ export function useForm(initialValues, submitCallback) {
         }))
     };
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
 
-        submitCallback(values);
+        await submitCallback(values);
 
         setValues(initialValues);   // clear form
     }

@@ -1,6 +1,7 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useGetOneGames } from "../../hooks/useGames";
+import gamesAPI from "../../api/games-api";
 
 const initialValues = {
     title: '',
@@ -12,14 +13,22 @@ const initialValues = {
 };
 
 export default function GameEdit() {
+    const navigate = useNavigate();
     const { gameId } = useParams();
-    const [ game, setGame ] = useGetOneGames(gameId);
+    const [ game,  ] = useGetOneGames(gameId);
     const {
         changeHandler,
         submitHandler,
         values,
-    } = useForm(Object.assign(initialValues, game), (values) => {
-        console.log(values)
+    } = useForm(Object.assign(initialValues, game), async (values) => {             // update game object with values from form
+        const isConfirmed = confirm('Are you sure you want to update this game?');  //  set basic confirmation dialog box 
+        
+        if (isConfirmed) {
+            await gamesAPI.update(gameId, values);
+        
+            navigate(`/games/${gameId}/details`);
+        }
+        
     });
 
     return (

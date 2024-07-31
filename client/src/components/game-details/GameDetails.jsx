@@ -36,11 +36,17 @@ export default function GameDetails() {
     });
 
     const gameDeleteHandler = async () => {     // set game delete functionality
+        const isConfirmed = confirm(`Are you sure you want to delete ${game.title} game?`);     // set game delete pop-up confirmation box 
+
+        if (!isConfirmed) {     // check if user confirmed the deletion
+            return;
+        }
+
         try {
-            await gamesAPI.remove(gameId)
+            await gamesAPI.remove(gameId)           // delete game
 
             navigate('/');
-        } catch (err) {
+        } catch (err) {                             // check for error
             console.error(err.message);
         }
     }
