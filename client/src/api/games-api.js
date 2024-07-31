@@ -21,12 +21,15 @@ export const getOne = (gameId) => requester.get(`${BASE_URL}/${gameId}`);
 
 export const create = (gameData) => requester.post(`${BASE_URL}`, gameData);
 
+export const remove = (gameId) => requester.del(`${BASE_URL}/${gameId}`);
+
 // make object and export it for mass use in other components
 const gamesAPI = {
     getOne,
     getAll,
     getLatest,
     create,
+    remove,
 }
 
 export default gamesAPI;
