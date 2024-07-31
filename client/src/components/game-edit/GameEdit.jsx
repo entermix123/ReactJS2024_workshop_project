@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
 import { useGetOneGames } from "../../hooks/useGames";
-import { useMemo } from "react";
 import gamesAPI from "../../api/games-api";
 
 export default function GameEdit() {
@@ -22,7 +21,7 @@ export default function GameEdit() {
             navigate(`/games/${gameId}/details`);
         }
         
-    });
+    }, { reinitializeForm: true });  // reinitialize form with current game data
 
     return (
         <section id="edit-page" className="auth">
