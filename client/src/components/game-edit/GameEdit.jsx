@@ -4,26 +4,16 @@ import { useGetOneGames } from "../../hooks/useGames";
 import { useMemo } from "react";
 import gamesAPI from "../../api/games-api";
 
-const initialValues = {
-    title: '',
-    category: '',
-    maxLevel: '',
-    imageUrl: '',
-    summary: '',
-    // Add more fields as needed for game details
-};
-
 export default function GameEdit() {
     const navigate = useNavigate();
     const { gameId } = useParams();
-    const [ game,  ] = useGetOneGames(gameId);
-    const initialFormValues = useMemo(() => Object.assign({}, initialValues, game), [game]); 
+    const [ game ] = useGetOneGames(gameId);
 
     const {
         changeHandler,
         submitHandler,
         values,
-    } = useForm(initialFormValues, async (values) => {             // update game object with values from form
+    } = useForm(game, async (values) => {             // update game object with values from form
         const isConfirmed = confirm('Are you sure you want to update this game?');  //  set basic confirmation dialog box 
         
         if (isConfirmed) {

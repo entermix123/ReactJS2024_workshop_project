@@ -29,7 +29,13 @@ export function useGetAllGames() {
 }
 
 export function useGetOneGames(gameId) {
-    const [ game, setGame ] = useState({});           // set state for current game
+    const [ game, setGame ] = useState({    // set state for current game as empty object
+        title: '',
+        category: '',
+        maxLevel: '',
+        imageUrl: '',
+        summary: '',
+    });           
 
     useEffect(() => {                               // set useEffect to change current game content
         (async () => {                              // set async function to make GET request for specific game
