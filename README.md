@@ -76,6 +76,7 @@ Preseed data on server.js on 1341 row - add games, users and whatever needed
 - [x] Refatured comments 
 - [x] Refactured comments with useReducer
 - [x] Show edit and delete button if game owner
-- [ ] Edit page and edit functionality
-- [ ] Delete game functionality
+- [x] Edit page and edit functionality
+- [x] Delete Game functionality
+- [ ] Add route guards
 - [ ] Profiler usage in inspect browser console

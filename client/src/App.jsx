@@ -10,6 +10,7 @@ import Home from "./components/home/Home"
 import Login from "./components/login/Login"
 import GameDetails from "./components/game-details/GameDetails"
 import Logout from "./components/logout/Logout"
+import PrivateGuard from "./components/common/PrivateGuard"
 
 function App() {
 
@@ -34,9 +35,11 @@ function App() {
                     <Route path='/games' element={<GameList />} />
 
                     <Route path='/games/:gameId/details' element={<GameDetails />} />
-                                                
-                    <Route path='/games/create' element={<GameCraete />} />
                     
+                    <Route element={<PrivateGuard />} >
+                        <Route path='/games/create' element={<GameCraete />} />
+                    </Route>
+                                                
                     <Route path='/logout' element={<Logout />} />
                 </Routes>
 
