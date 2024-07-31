@@ -31,7 +31,6 @@ export function useGetAllGames() {
 export function useGetOneGames(gameId) {
     const [ game, setGame ] = useState({});           // set state for current game
 
-
     useEffect(() => {                               // set useEffect to change current game content
         (async () => {                              // set async function to make GET request for specific game
             const result = await gamesAPI.getOne(gameId); // call getOne function from games-api.js

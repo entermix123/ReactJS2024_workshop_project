@@ -29,7 +29,7 @@ function App() {
 
                     <Route path='/register' element={<Register />} />
 
-                    <Route path='/game/edit' element={<GameEdit />} />
+                    <Route path='/games/:gameId/edit' element={<GameEdit />} />
 
                     <Route path='/games' element={<GameList />} />
 
