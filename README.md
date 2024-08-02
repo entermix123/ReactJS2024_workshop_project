@@ -79,4 +79,6 @@ Preseed data on server.js on 1341 row - add games, users and whatever needed
 - [x] Edit page and edit functionality
 - [x] Delete Game functionality
 - [x] Add route guards
+- [ ] Error boundaries
+- [ ] Lazy loading
 - [ ] Profiler usage in inspect browser console
