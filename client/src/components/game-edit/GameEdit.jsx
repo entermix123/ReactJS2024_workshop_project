@@ -21,7 +21,7 @@ export default function GameEdit() {
             navigate(`/games/${gameId}/details`);
         }
         
-    });
+    },  true);
 
     return (
         <section id="edit-page" className="auth">
