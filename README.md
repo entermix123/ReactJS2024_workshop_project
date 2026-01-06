@@ -61,7 +61,7 @@ SoftUni React Course Project
 
 ## 8. UI Implementation
 - [x] Dynamic Navigation
-- [ ] Create Game
+- [x] Create Game
   - [x] API function
   - [x] Hook
   - [x] Latest Games
@@ -73,12 +73,12 @@ Preseed data on server.js on 1341 row - add games, users and whatever needed
 ## 9. Refactoring
 - [x] Extract auth state from App component
 - [x] Persist auth state
-- [x] Refatured comments 
+- [x] Refactured comments 
 - [x] Refactured comments with useReducer
 - [x] Show edit and delete button if game owner
 - [x] Edit page and edit functionality
 - [x] Delete Game functionality
 - [x] Add route guards
-- [ ] Error boundaries
-- [ ] Lazy loading
-- [ ] Profiler usage in inspect browser console
+- [x] Error boundaries
+- [x] Lazy loading
+- [x] Profiler usage in inspect browser console
