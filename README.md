@@ -40,7 +40,7 @@ SoftUni React Course Project
 ## 6. API Hooks
 - [x] GameAPI Hooks
 - [x] Form Hook
-- [ ] Comments Hooks
+- [x] Comments Hooks
 
 ## 7. Authentication
 - [x] Auth API
